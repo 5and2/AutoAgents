@@ -1,0 +1,22 @@
+version: '3'
+services:
+  autoagents:
+    build:
+      context: ./AutoAgents
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "7860:7860"
+    environment:
+      - OPENAI_API_KEY=your_openai_api_key
+      - SERPAPI_KEY=your_serpapi_key
+    networks:
+      - autoagents-network
+    volumes:
+      - autoagents-data:/data
+
+networks:
+  autoagents-network:
+    external: true
+
+volumes:
+  autoagents-data:
