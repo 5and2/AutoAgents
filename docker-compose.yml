@@ -11,8 +11,8 @@ services:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - SERPAPI_KEY=${SERPAPI_KEY}
     networks:
-      - cloudflare_default  # Add the network here
+      - bridge  # Add the network here
 
 networks:
-  cloudflare_default:
+  bridge:
     external: true
